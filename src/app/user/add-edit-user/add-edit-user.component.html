@@ -1,0 +1,39 @@
+<form>
+    <div class="mb-3">
+        <label for="userID" class="form-label">User ID</label>
+        <input type="text" class="form-control" [(ngModel)]="userID" name="userID">
+    </div>
+
+    <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" [(ngModel)]="firstName" name="firstName">
+    </div>
+    
+    <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName">
+    </div>
+
+    <div class="mb-3">
+        <label for="jobPosition" class="form-label">Job Position</label>
+        <input type="text" class="form-control" [(ngModel)]="jobPosition" name="jobPosition">
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" [(ngModel)]="email" name="email">
+    </div>
+
+    <div class="mb-3">
+        <label for="userRole" class="form-label">User Role</label>
+        <input type="text" class="form-control" [(ngModel)]="userRole" name="userRole">
+    </div>
+
+    
+    <button (click)="addUser()" *ngIf="user.id==0" class="btn btn-primary">
+        Add
+    </button>
+    <button (click)="updateUser()" *ngIf="user.id!=0" class="btn btn-primary">
+        Update
+    </button>
+</form>
