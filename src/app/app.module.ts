@@ -7,15 +7,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { ShowUserComponent } from './user/show-user/show-user.component';
-import { AddEditUserComponent } from './user/add-edit-user/add-edit-user.component';
 import { UserApiService } from './user-api.service';
+import { AddUserComponent } from './user/add-user/add-user.component';
+import { EditUserComponent } from './user/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     ShowUserComponent,
-    AddEditUserComponent
+    AddUserComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

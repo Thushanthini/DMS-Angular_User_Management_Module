@@ -23,8 +23,6 @@
   <tbody>
     <tr *ngFor="let item of userList$|async">
       <td>{{item.id}}</td>
-      <!-- <td>{{inspectionTypesMap.get(item.inspectionTypeId)}}</td> -->
-      <!-- <td>{{item.inspectionTypeId}}</td> -->
       <td>{{item.userID}}</td>
       <td>{{item.firstName}}</td>
       <td>{{item.lastName}}</td>
@@ -67,28 +65,7 @@
 </div>
 
 
-
-
-
-<!-- Show inspection types modal -->
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Inspection Types</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p *ngFor="let type of inspectionTypesList$|async">{{type.id}} - {{type.inspectionName}}</p>
-      </div>
-      
-    </div>
-  </div>
-</div> -->
-
-
-
-<!-- Add or edit inspection Modal -->
+<!-- Add or edit user Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -99,7 +76,8 @@
         ></button>
       </div>
       <div class="modal-body">
-        <app-add-edit-user [user]="user" *ngIf="activateAddEditUserComponent"></app-add-edit-user>
+        <app-add-user [user]="user" *ngIf="activateAddUserComponent"></app-add-user>
+        <app-edit-user [user]="user" *ngIf="activateEditUserComponent"></app-edit-user>
       </div>
     </div>
   </div>

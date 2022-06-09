@@ -19,7 +19,8 @@ export class ShowUserComponent implements OnInit {
 
   // Variables (properties)
   modalTitle:string = '';
-  activateAddEditUserComponent:boolean = false;
+  activateAddUserComponent:boolean = false;
+  activateEditUserComponent:boolean = false;
   user:any;
 
   modalAdd() {
@@ -33,13 +34,13 @@ export class ShowUserComponent implements OnInit {
       userRole:null
     }
     this.modalTitle = "Add User";
-    this.activateAddEditUserComponent = true;
+    this.activateAddUserComponent = true;
   }
 
   modalEdit(item:any) {
     this.user = item;
-    this.modalTitle = "Edit Inspection";
-    this.activateAddEditUserComponent = true;
+    this.modalTitle = "Edit User";
+    this.activateEditUserComponent = true;
   }
 
   delete(item:any) {
@@ -65,7 +66,8 @@ export class ShowUserComponent implements OnInit {
   }
 
   modalClose() {
-    this.activateAddEditUserComponent = false;
+    this.activateAddUserComponent = false;
+    this.activateEditUserComponent = false;
     this.userList$ = this.service.getUserList();
   }
 
