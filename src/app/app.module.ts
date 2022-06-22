@@ -10,6 +10,7 @@ import { ShowUserComponent } from './user/show-user/show-user.component';
 import { UserApiService } from './user-api.service';
 import { AddUserComponent } from './user/add-user/add-user.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { BadRequestComponent } from './error-pages/bad-request/bad-request.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
     UserComponent,
     ShowUserComponent,
     AddUserComponent,
-    EditUserComponent
+    EditUserComponent,
+    BadRequestComponent
   ],
   imports: [
     BrowserModule,
