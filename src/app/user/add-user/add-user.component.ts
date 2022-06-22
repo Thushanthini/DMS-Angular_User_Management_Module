@@ -2,6 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserApiService } from 'src/app/user-api.service';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ErrorHandlerService } from './../../error-handler.service';
+import { HttpErrorResponse } from '@angular/common/http';
+//import alert from 'alert'
 
 @Component({
   selector: 'app-add-user',
@@ -11,6 +14,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 export class AddUserComponent implements OnInit {
 
   userList$!: Observable<any[]>;
+  errorMessage: string = '';
 
   form: FormGroup = new FormGroup({
     userID: new FormControl(''),
@@ -22,16 +26,16 @@ export class AddUserComponent implements OnInit {
   });
   submitted = false;
 
-  constructor(private service: UserApiService, private formBuilder: FormBuilder) { }
+  constructor(private service: UserApiService, private formBuilder: FormBuilder,private errorHandler: ErrorHandlerService) { }
 
   @Input() user: any;
   id: number = 0;
-  userID: string = "";
-  firstName: string = "";
-  lastName: string = "";
-  jobPosition: string = "";
-  email: string = "";
-  userRole: string = "";
+  userID: string = "E2563";
+  firstName: string = "kgdgk";
+  lastName: string = "mblk";
+  jobPosition: string = "mbdkmd";
+  email: string = "lbdm@mglkd";
+  userRole: string = "kmfdlbkdk";
 
   ngOnInit(): void {
 
@@ -96,9 +100,20 @@ export class AddUserComponent implements OnInit {
           showAddSuccess.style.display = "none"
         }
       }, 4000);
-    })
+    },((error)=>{
+      alert('error message')
+      var showAddSuccess = document.getElementById('add-success-alert');
+      if (showAddSuccess) {
+        showAddSuccess.style.display = "block";
+      }
+      setTimeout(function () {
+        if (showAddSuccess) {
+          showAddSuccess.style.display = "none"
+        }
+      }, 4000);
+    }))
 
-    console.log(JSON.stringify(this.form.value, null, 2));
+    //console.log(JSON.stringify(this.form.value, null, 2));
   }
 
 }
